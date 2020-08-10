@@ -1,6 +1,6 @@
 # createvmdk
 
-The purpose of this tool is to create vmdk files that wrap raw disks/partitions. It substitutes for handcrafting vmdks or using the Oracle-VirtualBox's `vboxmanage` tool or the VMware's `Virtual Disk Manager`. Installing virtualbox,for example, takes 200Mb of space, which is overkill for just wanting to create vmdks. The vmdk-s thus created can then be used by kvm, qemu, virsh, guestfish, etc. 
+The purpose of this tool is to create vmdk files that wrap raw disks/partitions. It substitutes for handcrafting vmdks or using the Oracle-VirtualBox's `vboxmanage` tool or the VMware's `Virtual Disk Manager`. Installing virtualbox,for example, takes 200Mb of space, which is overkill for just wanting to create vmdks. The vmdk-s thus created can then be used by kvm, qemu, virsh, guestfish, VirtualBox, etc. 
 ``` 
 vboxmanage internalcommands createrawvmdk -filename \path\to\file.vmdk -rawdisk /dev/sda
 createvmdk.sh -f \path\to\disk001.vmdk -c fullDevice -x b:/dev/sda 
@@ -20,7 +20,7 @@ Contributed patches are welcome as long as they improve the tool while preservin
 
 ## notes
 bash and pwsh are very commonly installed shell tools on both windows/linux systems. 
-Of the two, at the time, most functionality lie in linux, bash seemed more ubiqutous.Hence, the choice to write this tool as a bash-script.
+Most functionality of the tool, such as partitionedDevice, lay in linux, and bash was relatively more ubiqutous at the time.Hence, the choice to write this tool as a bash-script.
 
 ## Instructions to run
 ```
@@ -33,7 +33,7 @@ Of the two, at the time, most functionality lie in linux, bash seemed more ubiqu
 ```
 
 ## Dependencies/requires
-- Win: [git-bash 2.28.0](https://git-scm.com/),  Powershell 7.0.3 [pwsh](https://github.com/PowerShell/PowerShell/releases/), libyal/libvmdk [vmdkinfo](https://github.com/libyal/libvmdk), qemu [qemu-img](https://qemu.weilnetz.de/w64/)
+- Win: [git-bash 2.28.0](https://git-scm.com/) (bash-5),  Powershell 7.0.3 [pwsh](https://github.com/PowerShell/PowerShell/releases/), libyal/libvmdk [vmdkinfo](https://github.com/libyal/libvmdk), qemu [qemu-img](https://qemu.weilnetz.de/w64/)
 - Linux: bash-5, libvmdk (vmdkinfo), qemu (qemu-img), util-linux (blockdev, blkid)
 
 ## Command line options

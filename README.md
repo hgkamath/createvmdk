@@ -144,3 +144,58 @@ ddb.virtualHWVersion = "4"
 -rw-r--r--. 1 root root     735 Aug  9 21:41 /tmp/testvc.vmdk
 ```
 
+### Notes on building libyal/libvmdk  vmdkinfo 
+
+```
+https://github.com/libyal/libvmdk
+https://github.com/libyal/libvmdk/wiki/Building
+
+https://repo.msys2.org/distrib/
+C:\tmp\Downloads\msys2-i686-latest.exe
+
+https://www.msys2.org/news/#2020-06-29-new-packages
+https://www.msys2.org/news/#2020-06-29-new-packagers
+[]# pacman-key --init
+[]# pacman-key --populate msys2
+[]# pacman-key --refresh-keys
+[]# curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz
+[]# pacman -U msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz
+
+[]# pacman -Syu 
+[]# pacman -S mingw-w64-i686-gcc mingw-w64-i686-libtool mingw-w64-cross-binutils mingw-w64-i686-gettext autoconf automake vim git pkgconfig intltool make
+./autogen.sh
+
+[]# cd /c/tmp
+[]# git clone https://github.com/libyal/libvmdk
+
+[]# # create a.sh file for compiling
+[]# cat a.sh
+#!/bin/sh
+
+CC=/mingw32/bin/i686-w64-mingw32-gcc
+CXX=/mingw32/bin/i686-w64-mingw32-g++
+AR=/mingw32/bin/i686-w64-mingw32-gcc-ar
+OBJDUMP=/opt/i686-w64-mingw32/bin/objdump
+RANLIB=/mingw32/bin/i686-w64-mingw32-gcc-ranlib
+STRIP=/opt/i686-w64-mingw32/bin/strip
+MINGWFLAGS="-mwin32 -mconsole -march=i586 "
+CFLAGS="$MINGWFLAGS"
+CXXFLAGS="$MINGWFLAGS"
+
+CC=$CC CXX=$CXX AR=$AR OBJDUMP=$OBJDUMP RANLIB=$RANLIB STRIP=$STRIP ./configure --host=i686-w64-mingw32 --prefix=/e/apps_win/libvmdk --enable-winapi=yes
+
+CC=$CC CXX=$CXX AR=$AR OBJDUMP=$OBJDUMP RANLIB=$RANLIB STRIP=$STRIP CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" make
+
+
+
+[]# ldd /e/apps_win/libvmdk/bin/vmdkinfo.exe
+        ntdll.dll => /c/WINDOWS/SYSTEM32/ntdll.dll (0x77700000)
+        KERNEL32.DLL => /c/WINDOWS/System32/KERNEL32.DLL (0x75800000)
+        KERNELBASE.dll => /c/WINDOWS/System32/KERNELBASE.dll (0x75b80000)
+        libvmdk-1.dll => /e/apps_win/libvmdk/bin/libvmdk-1.dll (0x70300000)
+        msvcrt.dll => /c/WINDOWS/System32/msvcrt.dll (0x76d80000)
+        libwinpthread-1.dll => /mingw32/bin/libwinpthread-1.dll (0x64b40000)
+        zlib1.dll => /mingw32/bin/zlib1.dll (0x63080000)
+        libgcc_s_dw2-1.dll => /mingw32/bin/libgcc_s_dw2-1.dll (0x6eb40000)
+
+```

@@ -119,11 +119,11 @@ ddb.virtualHWVersion = "4"
 
 2) Linux - CreateType: partitionedDevice
 
-Note: in the below example using the whole physical block device /dev/sda as a partition extent is not a good idea, as real physical devices usually ought to have partition tables. It has been invoked here as such only to illustrate what is possible. 
+Note: in the below example using the whole physical block device /dev/sdd as a partition extent is not a good idea, as real physical devices usually ought to have partition tables. It has been invoked here as such only to illustrate what is possible. 
 ```
 [root@fedora createvmdk]# rm /tmp/testvc* -f 
 [root@fedora createvmdk]# ./createvmdk.sh -f /tmp/testvc.vmdk -c partitionedDevice \
--x "b:/dev/sda::" -x "b:/dev/sdc:1,2z,3-5,7L:"  -x "b:/dev/sdb:1"  
+-x "b:/dev/sdd::" -x "b:/dev/sdc:1,2z,3-5,7L:"  -x "b:/dev/sdb:1"  
 [root@fedora createvmdk]# cat /tmp/testvc.vmdk
 #Disk Descriptor File
 version=1
@@ -136,7 +136,7 @@ createType="partitionedDevice"
 
 RW 63 FLAT "/tmp/testvc-pt-flat.vmdk" 0
 RW 1985 ZERO
-RW 16777216 FLAT "/dev/sda" 0
+RW 16777216 FLAT "/dev/sdd" 0
 RW 192937983 FLAT "/dev/sdc1" 0
 RW 2097152 ZERO "/dev/sdc2" 0
 RW 2097152 FLAT "/dev/sdc3" 0

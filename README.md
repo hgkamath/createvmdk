@@ -105,7 +105,7 @@ ddb.virtualHWVersion = "4"
 
 2) Linux - CreateType: partitionedDevice 
 ```
-[root@fedora createvmdk]# rm /tmp/testvc* -f ; ./createvmdk.sh -f /tmp/testvc.vmdk -c partitionedDevice -x "b:/dev/sdc::" -x "b:/dev/sdc:1,2z,3-5,7L:"  -x "b:/dev/sdb:1"  ; cat /tmp/testvc.vmdk
+[root@fedora createvmdk]# rm /tmp/testvc* -f ; ./createvmdk.sh -f /tmp/testvc.vmdk -c partitionedDevice -x "b:/dev/sda::" -x "b:/dev/sdc:1,2z,3-5,7L:"  -x "b:/dev/sdb:1"  ; cat /tmp/testvc.vmdk
 #Disk Descriptor File
 version=1
 encoding="windows-1252"
@@ -117,7 +117,7 @@ createType="partitionedDevice"
 
 RW 63 FLAT "/tmp/testvc-pt-flat.vmdk" 0
 RW 1985 ZERO
-RW 3907029168 FLAT "/dev/sdc" 0
+RW 16777216 FLAT "/dev/sda" 0
 RW 192937983 FLAT "/dev/sdc1" 0
 RW 2097152 ZERO "/dev/sdc2" 0
 RW 2097152 FLAT "/dev/sdc3" 0

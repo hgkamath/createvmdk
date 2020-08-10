@@ -29,6 +29,9 @@ Of the two, at the time, most functionality lie in linux, bash seemed more ubiqu
      bash ./createvmdk.sh -h
 ```
 
+## Dependencies/requires
+- Win: Powershell 7.0.3 [pwsh](https://github.com/PowerShell/PowerShell/releases/), [vmdkinfo](https://github.com/libyal/libvmdk), [qemu-img](https://qemu.weilnetz.de/w64/)
+- Lnx: bash-5, vmdkinfo, qemu-img, block-dev, blkid
 
 ## Command line options
 ```

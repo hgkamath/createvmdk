@@ -8,15 +8,15 @@ vboxmanage internalcommands createrawvmdk -filename /path/to/file.vmdk -rawdisk 
 
 ## Disclaimer
 - use at your own peril 
-- fix any bug you find
+- There may be bugs
 - author not responsible for any damages
 
-## Contribute
-I should be okay with any contributed patches as long as they improve the tool preserving the functionality
+## Contribute bug fixes and feature additions
+Contributed patches as long as they improve the tool preserving the functionality are welcome
 
 ## notes
 bash and pwsh are very commonly installed shell tools on both windows/linux systems. 
-Of the two, at the time, bash seemed more ubiqutous, and so the choice was made to write this script in bash.
+Of the two, at the time, most functionality lie in linux, bash seemed more ubiqutous.Hence, the choice to write this tool as a bash-script.
 
 ## Instructions to run
 ```
@@ -45,6 +45,7 @@ createvmdk.sh: command line tool to create vmdk files
         -m win -c fullDevice -x "\\.\PhysicalDrive2"
         -m lnx -c fullDevice -x /dev/sdc
       For vmdk_createtype partitionedDevice, order matters, the -x option may be repeated to add more partitions
+        This vmdk_createtype is suported only for linux
         -m lnx -c partitionedDevice -x CreateSubType:Target:ExtentInfo:Options
              CreateSubType: x=Zero/ b=BlockDevice/ f:Monolithic_flat/ s:Monolithic_sparse
              Target: VMDK_File/ Block File

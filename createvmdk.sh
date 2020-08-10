@@ -146,7 +146,7 @@ function print_arghelp {
           echo " -c <vmdk_createtype>     necessary, valid_values=fullDevice/partitionedDevice"
         ;;
       x)
-          echo " -x extent information    necessary, Extents can be of various subtypes"
+          echo " -x extent information    necessary, repeatable depending on the createtype, extents can be of various subtypes"
           echo "    ex"
           echo "      For vmdk_createtype fullDevice, only one -x option is to be specified, which is the full-device name "
           echo "        -m win -c fullDevice -x \"\\\\.\\PhysicalDrive2\" "
@@ -155,7 +155,7 @@ function print_arghelp {
           echo "        This vmdk_createtype is suported only for linux"
           echo "        -m lnx -c partitionedDevice -x CreateSubType:Target:ExtentInfo:Options "
           echo "             CreateSubType: x=Zero/ b=BlockDevice/ f:Monolithic_flat/ s:Monolithic_sparse "
-          echo "             Target: VMDK_File/ Block File "
+          echo "             Target: VMDK_File/ Block-device File "
           echo "               VMDK_File: sparse or flat vmdk-file "
           echo "             ExtentInfo: PartitionNos and Suffix options "
           echo "               PartitionNos: comma-separated-partitions, order matters "
@@ -498,7 +498,7 @@ getBlockDevName() {
       ;;
     by-partlabel)
       if [[ "x$PARTLABEL" == "x" ]] ; then print_error "Device $3 PARTLABEL unknown: blkid $3" ; fi 
-      newExtTarget="/dev/disk/by-partlabel$PARTLABEL"
+      newExtTarget="/dev/disk/by-partlabel/$PARTLABEL"
       ;;
     by-uuid)
       if [[ "x$UUID" == "x" ]] ; then print_error "Device $3 UUID unknown: blkid $3" ; fi 
@@ -506,7 +506,7 @@ getBlockDevName() {
       ;;
     by-partuuid)
       if [[ "x$PARTUUID" == "x" ]] ; then print_error "Device $3 PARTUUID unknown: blkid $3" ; fi 
-      newExtTarget="/dev/disk/by-partuuid$PARTUUID"
+      newExtTarget="/dev/disk/by-partuuid/$PARTUUID"
       ;;
   esac
 }

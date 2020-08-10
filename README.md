@@ -78,7 +78,8 @@ be present in the PATH
 
 1) Windows - CreateType: fullDevice
 
-```PS E:\gitrepos\createvmdk> & 'C:\Program Files\Git\usr\bin\bash.exe' 'E:/gitrepos/createvmdk/createvmdk.sh' -f E:\tmp\testvc.vmdk -c fullDevice -x "\\.\PhysicalDrive2" 
+```
+PS E:\gitrepos\createvmdk> & 'C:\Program Files\Git\usr\bin\bash.exe' 'E:/gitrepos/createvmdk/createvmdk.sh' -f E:\tmp\testvc.vmdk -c fullDevice -x "\\.\PhysicalDrive2" 
 PS E:\gitrepos\createvmdk> type E:\tmp\testvc.vmdk
 #Disk Descriptor File
 version=1

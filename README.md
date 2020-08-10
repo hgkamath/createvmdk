@@ -48,7 +48,7 @@ createvmdk.sh: command line tool to create vmdk files
         This vmdk_createtype is suported only for linux
         -m lnx -c partitionedDevice -x CreateSubType:Target:ExtentInfo:Options
              CreateSubType: x=Zero/ b=BlockDevice/ f:Monolithic_flat/ s:Monolithic_sparse
-             Target: VMDK_File/ Block File
+             Target: VMDK_File/ Block-device File
                VMDK_File: sparse or flat vmdk-file
              ExtentInfo: PartitionNos and Suffix options
                PartitionNos: comma-separated-partitions, order matters

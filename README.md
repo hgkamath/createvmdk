@@ -120,7 +120,8 @@ ddb.virtualHWVersion = "4"
 2) Linux - CreateType: partitionedDevice 
 ```
 [root@fedora createvmdk]# rm /tmp/testvc* -f 
-[root@fedora createvmdk]# ./createvmdk.sh -f /tmp/testvc.vmdk -c partitionedDevice -x "b:/dev/sda::" -x "b:/dev/sdc:1,2z,3-5,7L:"  -x "b:/dev/sdb:1"  
+[root@fedora createvmdk]# ./createvmdk.sh -f /tmp/testvc.vmdk -c partitionedDevice \
+-x "b:/dev/sda::" -x "b:/dev/sdc:1,2z,3-5,7L:"  -x "b:/dev/sdb:1"  
 [root@fedora createvmdk]# cat /tmp/testvc.vmdk
 #Disk Descriptor File
 version=1

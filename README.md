@@ -30,8 +30,8 @@ Of the two, at the time, most functionality lie in linux, bash seemed more ubiqu
 ```
 
 ## Dependencies/requires
-- Win: Powershell 7.0.3 [pwsh](https://github.com/PowerShell/PowerShell/releases/), [vmdkinfo](https://github.com/libyal/libvmdk), [qemu-img](https://qemu.weilnetz.de/w64/)
-- Lnx: bash-5, vmdkinfo, qemu-img, block-dev, blkid
+- Win: [git-bash 2.28.0](https://git-scm.com/),  Powershell 7.0.3 [pwsh](https://github.com/PowerShell/PowerShell/releases/), libyal/libvmdk [vmdkinfo](https://github.com/libyal/libvmdk), qemu [qemu-img](https://qemu.weilnetz.de/w64/)
+- Linux: bash-5, vmdkinfo, qemu-img, block-dev, blkid
 
 ## Command line options
 ```

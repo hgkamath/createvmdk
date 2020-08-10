@@ -14,6 +14,7 @@ createvmdk.sh -f /path/to/file.vmdk -c partitionedDevice -x b:/dev/sda:1,5
 - Not well tested
 - There may be bugs
 - No-one is responsible for any damages
+
 The identifying of disk partitions and having correct precise partition tables are important. It is easy to make mistakes, overwrite sectors in the wrong place, screw up filesystems and lose data residing in those sectors. 
 
 ## Contribute bug fixes and feature additions

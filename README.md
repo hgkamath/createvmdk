@@ -159,7 +159,7 @@ https://www.msys2.org/news/#2020-06-29-new-packagers
 []# pacman-key --populate msys2
 []# pacman-key --refresh-keys
 []# curl -O http://repo.msys2.org/msys/x86_64/msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz
-[]# pacman -U msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz
+[]# pacman -U msys2-keyring-r21.b39fb11-1-any.pkg.tar.xz
 
 []# pacman -Syu 
 []# pacman -S mingw-w64-i686-gcc mingw-w64-i686-libtool mingw-w64-cross-binutils mingw-w64-i686-gettext autoconf automake vim git pkgconfig intltool make

@@ -13,7 +13,7 @@ vboxmanage internalcommands createrawvmdk -filename /path/to/file.vmdk -rawdisk 
 - No-one is responsible for any damages
 
 ## Contribute bug fixes and feature additions
-Contributed patches as long as they improve the tool preserving the functionality are welcome
+Contributed patches are welcome as long as they improve the tool while preserving the functionality.
 
 ## notes
 bash and pwsh are very commonly installed shell tools on both windows/linux systems. 

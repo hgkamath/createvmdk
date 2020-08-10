@@ -1,6 +1,6 @@
 # createvmdk
 
-The purpose of this tool is to create vmdk files. It became necessary as a substitute for `vboxmanage` tool from the VirtualBox which is normally used to create vmdk files. Installing virtualbox which takes 200Mb of space just to get the vboxmanage for vmdk creation ability is overkill.
+The purpose of this tool is to create vmdk files. It became necessary as a substitute for `vboxmanage` tool from the VirtualBox which is normally used to create vmdk files. Installing virtualbox, which takes 200Mb of space just to get the vboxmanage tool for vmdk creation ability, is overkill.
 ``` 
 vboxmanage internalcommands createrawvmdk -filename disk001.vmdk -rawdisk /dev/sda
 vboxmanage internalcommands createrawvmdk -filename /path/to/file.vmdk -rawdisk /dev/sda -partitions 1,5

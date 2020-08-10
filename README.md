@@ -117,7 +117,8 @@ ddb.longContentID = "416f042477902c76158b0d0379ac3c13"
 ddb.virtualHWVersion = "4"
 ```
 
-2) Linux - CreateType: partitionedDevice 
+2) Linux - CreateType: partitionedDevice
+
 Note: in the below example using the whole physical block device /dev/sda as a partition extent is not a good idea, as real physical devices usually ought to have partition tables. It has been invoked here as such only to illustrate what is possible. 
 ```
 [root@fedora createvmdk]# rm /tmp/testvc* -f 

@@ -152,6 +152,7 @@ function print_arghelp {
           echo "        -m win -c fullDevice -x \"\\\\.\\PhysicalDrive2\" "
           echo "        -m lnx -c fullDevice -x /dev/sdc"
           echo "      For vmdk_createtype partitionedDevice, order matters, the -x option may be repeated to add more partitions"
+          echo "        This vmdk_createtype is suported only for linux"
           echo "        -m lnx -c partitionedDevice -x CreateSubType:Target:ExtentInfo:Options "
           echo "             CreateSubType: x=Zero/ b=BlockDevice/ f:Monolithic_flat/ s:Monolithic_sparse "
           echo "             Target: VMDK_File/ Block File "

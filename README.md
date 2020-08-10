@@ -73,3 +73,70 @@ createvmdk.sh: command line tool to create vmdk files
   The use of some options may require the executables 'bash', 'pwsh', 'qemu-img', 'vmdkinfo', 'blockdev' or 'blkid' to
 be present in the PATH
 ```
+
+## Examples
+
+1) Windows - CreateType: fullDevice
+
+```
+PS E:\gitrepos\createvmdk> & 'C:\Program Files\Git\usr\bin\bash.exe' 'E:/gitrepos/createvmdk/createvmdk.sh' -f E:\tmp\testvc.vmdk -c fullDevice -x "\\.\PhysicalDrive2" 
+PS E:\gitrepos\createvmdk> type E:\tmp\testvc.vmdk
+#Disk Descriptor File
+version=1
+encoding="windows-1252"
+CID=79ac3c13
+parentCID=ffffffff
+
+# vmdk type
+createType="fullDevice"
+
+RW 3907029168 FLAT "\\.\PhysicalDrive2" 0
+
+# The Disk Data Base
+#DDB
+
+ddb.adapterType = "ide"
+ddb.geometry.cylinders = "16383"
+ddb.geometry.heads = "255"
+ddb.geometry.sectors = "63"
+ddb.longContentID = "416f042477902c76158b0d0379ac3c13"
+ddb.virtualHWVersion = "4"
+```
+
+2) Linux - CreateType: partitionedDevice 
+```
+[root@fedora createvmdk]# rm /tmp/testvc* -f ; ./createvmdk.sh -f /tmp/testvc.vmdk -c partitionedDevice -x "b:/dev/sda::" -x "b:/dev/sdc:1,2z,3-5,7L:"  -x "b:/dev/sdb:1"  ; cat /tmp/testvc.vmdk
+#Disk Descriptor File
+version=1
+encoding="windows-1252"
+CID=035e3acb
+parentCID=ffffffff
+
+# vmdk type
+createType="partitionedDevice"
+
+RW 63 FLAT "/tmp/testvc-pt-flat.vmdk" 0
+RW 1985 ZERO
+RW 16777216 FLAT "/dev/sda" 0
+RW 192937983 FLAT "/dev/sdc1" 0
+RW 2097152 ZERO "/dev/sdc2" 0
+RW 2097152 FLAT "/dev/sdc3" 0
+RW 2097152 FLAT "/dev/sdc4" 0
+RW 195035136 FLAT "/dev/sdc5" 0
+RW 195035136 FLAT "/dev/disk/by-partlabel/D1_1600_1623" 0
+RW 32765919 FLAT "/dev/sdb1" 0
+RW 143 ZERO
+RW 33 FLAT "/tmp/testvc-pt-flat.vmdk" 63
+
+# The Disk Data Base
+#DDB
+
+ddb.adapterType = "ide"
+ddb.geometry.cylinders = "16383"
+ddb.geometry.heads = "255"
+ddb.geometry.sectors = "63"
+ddb.longContentID = "6caa371639b74eee042b2d39035e3acb"
+ddb.virtualHWVersion = "4"
+[root@fedora createvmdk]#
+```
+

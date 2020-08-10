@@ -8,8 +8,9 @@ vboxmanage internalcommands createrawvmdk -filename /path/to/file.vmdk -rawdisk 
 
 ## Disclaimer
 - Use at your own peril 
+- Not well tested
 - There may be bugs
-- Noone is responsible for any damages
+- No-one is responsible for any damages
 
 ## Contribute bug fixes and feature additions
 Contributed patches as long as they improve the tool preserving the functionality are welcome

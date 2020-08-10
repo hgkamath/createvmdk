@@ -123,7 +123,7 @@ RW 2097152 ZERO "/dev/sdc2" 0
 RW 2097152 FLAT "/dev/sdc3" 0
 RW 2097152 FLAT "/dev/sdc4" 0
 RW 195035136 FLAT "/dev/sdc5" 0
-RW 195035136 FLAT "/dev/disk/by-partlabelD1_1600_1623" 0
+RW 195035136 FLAT "/dev/disk/by-partlabel/D1_1600_1623" 0
 RW 32765919 FLAT "/dev/sdb1" 0
 RW 143 ZERO
 RW 33 FLAT "/tmp/testvc-pt-flat.vmdk" 63

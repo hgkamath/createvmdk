@@ -25,9 +25,8 @@ The identifying of disk partitions and having correct precise partition tables a
 ## Contribute bug fixes and feature additions
 Contributed patches are welcome as long as they improve the tool while preserving the functionality.
 
-## notes
-bash and pwsh are very commonly installed shell tools on both windows/linux systems. 
-Most functionality of the tool, such as partitionedDevice, lay in linux, and bash was relatively more ubiqutous at the time.Hence, the choice to write this tool as a bash-script.
+## Notes
+- bash and pwsh are very commonly installed shell tools on both windows/linux systems. Most functionality of the tool, such as partitionedDevice, lay in linux, and bash was relatively more ubiqutous at the time.Hence, the choice to write this tool as a bash-script.
 
 ## Instructions to run
 ```

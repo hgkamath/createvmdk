@@ -137,6 +137,9 @@ ddb.geometry.heads = "255"
 ddb.geometry.sectors = "63"
 ddb.longContentID = "6caa371639b74eee042b2d39035e3acb"
 ddb.virtualHWVersion = "4"
-[root@fedora createvmdk]#
+[root@fedora createvmdk]# ls -l /tmp/testvc*.*
+-rw-r--r--. 1 root root 1048576 Aug  9 21:41 /tmp/testvc-pt-flat.vmdk
+-rw-r--r--. 1 root root     313 Aug  9 21:41 /tmp/testvc-pt.vmdk
+-rw-r--r--. 1 root root     735 Aug  9 21:41 /tmp/testvc.vmdk
 ```
 

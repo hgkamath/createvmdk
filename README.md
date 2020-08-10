@@ -39,7 +39,7 @@ Contributed patches are welcome as long as they improve the tool while preservin
 ```
 
 ## Dependencies/requires
-- Win: [git-bash 2.28.0](https://git-scm.com/) (bash-5),  Powershell 7.0.3 [pwsh](https://github.com/PowerShell/PowerShell/releases/), libyal/libvmdk [vmdkinfo](https://github.com/libyal/libvmdk), qemu [qemu-img](https://qemu.weilnetz.de/w64/)
+- Win: [git-bash 2.28.0](https://git-scm.com/) (bash-5),  Powershell 7.0.3 ([pwsh](https://github.com/PowerShell/PowerShell/releases/)), libyal/libvmdk ([vmdkinfo](https://github.com/libyal/libvmdk)), qemu ([qemu-img](https://qemu.weilnetz.de/w64/))
 - Linux: bash-5, libvmdk (vmdkinfo), qemu (qemu-img), util-linux (blockdev, blkid)
 
 ## Command line options

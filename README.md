@@ -1,6 +1,6 @@
 # createvmdk
 
-The purpose of this tool is to create vmdk files that wrap raw disks/partitions. It substitutes for handcrafting vmdks or using the Oracle-VirtualBox's `vboxmanage` tool or the VMware's `Virtual Disk Manager`. Installing virtualbox,for example, takes 200Mb of space, which is overkill for just wanting to create vmdks. The vmdk-s thus created can then be used by kvm, qemu, virsh, guestfish, VirtualBox, etc. 
+The purpose of this tool is to create vmdk files that wrap raw disks/partitions. It substitutes for handcrafting vmdks or using the Oracle-VirtualBox's `vboxmanage` tool or the VMware's `Virtual Disk Manager`. Installing virtualbox,for example, takes 200Mb of space, which is overkill for just wanting to create vmdks. 
 ``` 
 win:
 vboxmanage internalcommands createrawvmdk -filename E:\path\to\file.vmdk -rawdisk \\.\PhysicalDrive2
